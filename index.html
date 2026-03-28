@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Russell Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-yellow: #facc15; 
+            --darker-bg: #020617; 
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--darker-bg);
+            color: #f1f5f9;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Adobe-style Logo App Icon */
+        .ps-logo {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ps-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+        }
+
+        .ps-logo span {
+            color: var(--accent-yellow);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .profile-glow {
+            position: relative;
+        }
+
+        .profile-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse-glow 4s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .hero-img {
+            animation: float 6s ease-in-out infinite;
+            filter: grayscale(10%) contrast(105%);
+            transition: all 0.5s ease;
+        }
+
+        .custom-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-yellow);
+            background: rgba(30, 41, 59, 0.6);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.2);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: fit-content;
+            animation: marquee 25s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                line-height: 1;
+                letter-spacing: -0.05em;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-yellow-400 selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 py-3 md:py-4 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <!-- Adobe Photoshop Style Logo "As" -->
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="ps-logo">
+                    <span>As</span>
+                </div>
+                <div class="hidden sm:block">
+                    <div class="text-sm font-black tracking-tighter leading-none">ACHMAD</div>
+                    <div class="text-[10px] text-yellow-400 font-bold tracking-[0.2em] leading-none uppercase">Syarifudin</div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-yellow-400 transition">Beranda</a>
+                <a href="#about" class="hover:text-yellow-400 transition">Tentang</a>
+                <a href="#layanan" class="hover:text-yellow-400 transition">Layanan</a>
+                <a href="#kontak" class="hover:text-yellow-400 transition">Kontak</a>
+            </div>
+            <a href="https://wa.me/your-number" class="btn-primary px-5 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider shadow-lg">Chat Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-yellow-400/5 rounded-full blur-[100px]"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-3/5 text-center lg:text-left order-2 lg:order-1" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full text-[10px] font-bold mb-6 border border-yellow-400/20 uppercase tracking-widest mx-auto lg:mx-0">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+                        </span>
+                        Tersedia Untuk Proyek Baru
+                    </div>
+                    <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tighter">
+                        Achmad <span class="text-yellow-400 lg:block">Syarifudin</span>
+                    </h1>
+                    <p class="text-slate-300 text-sm md:text-lg mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 border-l-0 lg:border-l-2 border-yellow-400/30 lg:pl-6">
+                        Seorang <span class="text-white font-semibold">Pengajar</span> yang merangkap sebagai <span class="text-white font-semibold">Desainer & Developer</span>. Fokus pada pembuatan antarmuka yang bersih dan pengalaman digital yang bermakna.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="#layanan" class="btn-primary px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-widest shadow-xl">Eksplorasi Karya</a>
+                        <a href="#about" class="px-8 py-4 rounded-2xl font-bold text-xs border border-white/10 hover:bg-white/5 transition">Tentang Saya</a>
+                    </div>
+                </div>
+
+                <!-- Image Content -->
+                <div class="w-full lg:w-2/5 flex justify-center order-1 lg:order-2" data-aos="fade-left">
+                    <div class="profile-glow relative group">
+                        <img src="https://lh3.googleusercontent.com/d/1jedd705V-u2lZtOzLCjP83NVjctL1s36" 
+                             alt="Achmad Syarifudin" 
+                             class="hero-img w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-[2.5rem] lg:rounded-[4rem] shadow-2xl border-4 border-white/5">
+                        
+                        <!-- Mini Badge -->
+                        <div class="absolute -bottom-4 -right-4 bg-slate-900/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">🚀</span>
+                                <div class="text-left">
+                                    <p class="text-[8px] text-slate-500 font-bold uppercase">Visi Digital</p>
+                                    <p class="text-[10px] font-bold text-white">Simple & Impactful</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="py-6 md:py-8 bg-yellow-400 overflow-hidden whitespace-nowrap select-none border-y border-black/5">
+        <div class="animate-marquee gap-8 md:gap-12 text-black font-black text-xl md:text-2xl uppercase italic">
+            <span>Creative Design</span> • <span>Web Development</span> • <span>Teaching</span> • <span>UI/UX Interface</span> • <span>Problem Solving</span> • <span>Creative Design</span> • <span>Web Development</span> • <span>Teaching</span> • <span>UI/UX Interface</span> • <span>Problem Solving</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1" data-aos="fade-up">
+                    <h2 class="text-yellow-400 font-black tracking-[0.2em] text-xs mb-4 uppercase">Biografi Singkat</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
+                        Mengajar dengan Hati, <br class="hidden md:block">Mendesain dengan Presisi.
+                    </h3>
+                    <div class="space-y-4 text-slate-400 text-base md:text-lg leading-relaxed">
+                        <p>Saya adalah pengajar di <span class="text-white underline decoration-yellow-400 underline-offset-4">SMP Avisena Jabon</span> yang mendedikasikan waktu untuk dunia teknologi.</p>
+                        <p>Bagi saya, kode dan desain adalah bahasa untuk memecahkan masalah. Saya fokus pada pengalaman pengguna yang nyaman.</p>
+                    </div>
+                    
+                    <div class="mt-10 flex gap-8">
+                        <div>
+                            <p class="text-3xl md:text-4xl font-black text-white">5+</p>
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Thn Mengajar</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl md:text-4xl font-black text-white">20+</p>
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Proyek Desain</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 grid grid-cols-2 gap-3 md:gap-4" data-aos="zoom-in">
+                    <div class="space-y-3 md:space-y-4">
+                        <div class="h-40 md:h-56 bg-slate-800 rounded-3xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <div class="h-32 md:h-44 bg-yellow-400 rounded-3xl flex items-center justify-center p-4">
+                            <p class="text-black font-black text-sm md:text-lg text-center leading-none uppercase">Evolusi Digital</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 md:space-y-4 pt-6 md:pt-10">
+                        <div class="h-44 md:h-64 bg-slate-800 rounded-3xl overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <div class="h-28 md:h-40 bg-slate-700 rounded-3xl border border-white/10 flex items-center justify-center">
+                            <span class="text-3xl md:text-4xl">👨‍🏫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 md:py-32 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6 text-center mb-16" data-aos="fade-up">
+            <h2 class="text-yellow-400 font-bold tracking-widest text-xs mb-4 uppercase">Layanan Kreatif</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-white mb-6 uppercase">Solusi <span class="opacity-30">Digital</span></h3>
+            <div class="w-16 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="custom-card p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem]" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-yellow-400/10 rounded-xl flex items-center justify-center text-2xl mb-6">💎</div>
+                <h4 class="text-xl md:text-2xl font-bold mb-4">UI/UX Design</h4>
+                <p class="text-sm md:text-base text-slate-400 leading-relaxed">Perancangan antarmuka yang intuitif untuk aplikasi yang dicintai pengguna.</p>
+            </div>
+            <div class="custom-card p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-yellow-400/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-yellow-400 text-black rounded-xl flex items-center justify-center text-2xl mb-6">⚡</div>
+                <h4 class="text-xl md:text-2xl font-bold mb-4">Web Development</h4>
+                <p class="text-sm md:text-base text-slate-400 leading-relaxed">Membangun website responsif dengan performa tinggi menggunakan teknologi modern.</p>
+            </div>
+            <div class="custom-card p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem]" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-yellow-400/10 rounded-xl flex items-center justify-center text-2xl mb-6">🎓</div>
+                <h4 class="text-xl md:text-2xl font-bold mb-4">Digital Educator</h4>
+                <p class="text-sm md:text-base text-slate-400 leading-relaxed">Membantu transformasi ekosistem digital di instansi pendidikan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="pt-20 pb-10 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="bg-yellow-400 rounded-[2.5rem] md:rounded-[3rem] p-10 md:p-20 text-black flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12 mb-20 text-center lg:text-left" data-aos="zoom-in">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black leading-none mb-4 uppercase italic tracking-tighter">Mulai Proyek <br>Anda?</h2>
+                    <p class="font-bold text-black/70 text-sm md:text-base">Mari wujudkan visi digital Anda menjadi kenyataan sekarang juga.</p>
+                </div>
+                <a href="mailto:email@anda.com" class="w-full lg:w-auto px-10 py-5 bg-black text-white rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition shadow-2xl">Hubungi Saya</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-16">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="ps-logo !w-8 !h-8">
+                            <span class="!text-sm">As</span>
+                        </div>
+                        <div class="text-lg font-black tracking-tighter uppercase leading-none">Achmad<span class="text-yellow-400">.S</span></div>
+                    </div>
+                    <p class="text-slate-500 text-sm">Menggabungkan etika kerja pengajar dengan kreativitas desainer web modern.</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="font-bold text-white mb-4 uppercase tracking-widest text-[10px]">Navigasi</h5>
+                    <ul class="space-y-2 text-slate-500 text-xs">
+                        <li><a href="#home" class="hover:text-yellow-400 transition">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-yellow-400 transition">Tentang Saya</a></li>
+                        <li><a href="#layanan" class="hover:text-yellow-400 transition">Layanan</a></li>
+                    </ul>
+                </div>
+                <div class="flex justify-center md:justify-end gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-yellow-400 hover:text-black transition text-xs font-bold">IG</a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-yellow-400 hover:text-black transition text-xs font-bold">GH</a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 text-center text-slate-600 text-[9px] uppercase font-bold tracking-[0.2em]">
+                <p>© 2024 Achmad Syarifudin. Didesain dengan Presisi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'md:py-3', 'shadow-2xl');
+            } else {
+                nav.classList.remove('py-2', 'md:py-3', 'shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
