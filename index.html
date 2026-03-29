@@ -2,18 +2,14 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- Mencegah zoom in/out di HP agar tampilan tetap rapi seperti aplikasi -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Achmad Syarifudin - Digital Portfolio</title>
+    <title>Portfolio Saya</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- AOS Library for Scroll Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -156,18 +152,14 @@
 </head>
 <body class="selection:bg-yellow-400 selection:text-black">
 
-    <!-- Canvas Particle Background -->
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Animated Glowing Blobs -->
     <div class="glowing-blob blob-1"></div>
     <div class="glowing-blob blob-2"></div>
     <div class="glowing-blob blob-3"></div>
 
-    <!-- Navigation -->
     <nav class="glass-nav fixed w-full z-50 py-3 md:py-4 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-            <!-- Logo -->
             <div class="flex items-center gap-3 group cursor-pointer">
                 <div class="ps-logo">
                     <span>As</span>
@@ -178,7 +170,6 @@
                 </div>
             </div>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#home" class="hover:text-yellow-400 transition hover:-translate-y-1 transform inline-block">Beranda</a>
                 <a href="#about" class="hover:text-yellow-400 transition hover:-translate-y-1 transform inline-block">Tentang</a>
@@ -189,7 +180,6 @@
             <div class="flex items-center gap-3 md:gap-4">
                 <a href="https://api.whatsapp.com/send/?phone=6283832180622" target="_blank" class="btn-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap">Chat Me</a>
                 
-                <!-- Hamburger Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-1 rounded-lg hover:bg-white/10 transition">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -198,7 +188,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-4 px-6 flex-col space-y-4 text-center transform transition-transform duration-300 origin-top">
             <a href="#home" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 border-b border-white/5 block">Beranda</a>
             <a href="#about" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 border-b border-white/5 block">Tentang</a>
@@ -207,12 +196,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
                 
-                <!-- Text Content -->
                 <div class="w-full lg:w-3/5 text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0" data-aos="fade-right">
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full text-[9px] sm:text-[10px] font-bold mb-4 sm:mb-6 border border-yellow-400/20 uppercase tracking-widest mx-auto lg:mx-0 backdrop-blur-sm">
                         <span class="relative flex h-2 w-2">
@@ -234,15 +221,12 @@
                     </div>
                 </div>
 
-                <!-- Image Content -->
                 <div class="w-full lg:w-2/5 flex justify-center order-1 lg:order-2 mt-8 lg:mt-0" data-aos="fade-left">
                     <div class="relative group">
-                        <!-- Foto Profil -->
-                        <img src="https://i.ibb.co.com/CKJhTVcY/Whats-App-Image-2026-03-29-at-11-14-02.jpg" 
+                        <img src="https://raw.githubusercontent.com/username/portfolio/main/achmad-syarifudin-fixed.jpg" 
                              alt="Achmad Syarifudin" 
                              class="hero-img w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-[2.5rem] lg:rounded-[4rem] shadow-[0_0_40px_rgba(250,204,21,0.25)] relative z-10 border-4 border-slate-900 group-hover:scale-[1.02] transition-transform duration-500">
                         
-                        <!-- Mini Badge -->
                         <div class="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20 transition-transform hover:scale-110 animate-bounce" style="animation-duration: 3s;">
                             <div class="flex items-center gap-2 sm:gap-3">
                                 <span class="text-lg sm:text-xl">🚀</span>
@@ -258,14 +242,12 @@
         </div>
     </section>
 
-    <!-- Marquee -->
     <div class="py-4 sm:py-6 md:py-8 bg-yellow-400 overflow-hidden whitespace-nowrap select-none border-y border-black/10 shadow-[0_0_30px_rgba(250,204,21,0.2)] relative z-10">
         <div class="animate-marquee gap-6 sm:gap-8 md:gap-12 text-black font-black text-lg sm:text-xl md:text-2xl uppercase italic">
             <span>Creative Design</span> • <span>Web Development</span> • <span>Teaching</span> • <span>UI/UX Interface</span> • <span>Problem Solving</span> • <span>Creative Design</span> • <span>Web Development</span> • <span>Teaching</span> • <span>UI/UX Interface</span> • <span>Problem Solving</span>
         </div>
     </div>
 
-    <!-- About Section -->
     <section id="about" class="py-16 sm:py-20 md:py-32 relative z-10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
@@ -313,7 +295,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="layanan" class="py-16 sm:py-20 md:py-32 relative z-10">
         <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm -z-10 border-t border-white/5"></div>
         
@@ -345,10 +326,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="kontak" class="pt-16 sm:pt-20 pb-8 sm:pb-10 bg-black relative z-10 border-t border-white/10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <!-- Call to action Banner -->
             <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-[2rem] md:rounded-[3rem] p-8 sm:p-10 md:p-16 lg:p-20 text-black flex flex-col lg:flex-row justify-between items-center gap-6 sm:gap-8 md:gap-12 mb-16 sm:mb-20 text-center lg:text-left shadow-[0_0_50px_rgba(250,204,21,0.2)] hover:shadow-[0_0_80px_rgba(250,204,21,0.3)] transition-shadow duration-500" data-aos="zoom-in">
                 <div>
                     <h2 class="text-3xl sm:text-4xl md:text-6xl font-black leading-none mb-3 sm:mb-4 uppercase italic tracking-tighter">Mulai Proyek <br class="hidden sm:block">Anda?</h2>
@@ -387,7 +366,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Inisialisasi AOS (Animate On Scroll)
         AOS.init({ 
