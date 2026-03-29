@@ -27,7 +27,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Latar Belakang Canvas */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -38,7 +37,6 @@
             pointer-events: auto;
         }
 
-        /* Animasi Glowing Blobs (Aurora Effect) */
         .glowing-blob {
             position: absolute;
             border-radius: 50%;
@@ -59,7 +57,6 @@
             100% { transform: translate(50px, 50px) scale(1.2); }
         }
 
-        /* Animasi Teks Gradasi (Baru) */
         .animate-gradient-text {
             background: linear-gradient(to right, #facc15, #fff, #d97706, #facc15);
             background-size: 200% auto;
@@ -72,7 +69,6 @@
             to { background-position: 200% center; }
         }
 
-        /* Adobe-style Logo App Icon */
         .ps-logo {
             width: 42px; height: 42px;
             background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
@@ -93,7 +89,6 @@
             text-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
         }
 
-        /* Glassmorphism Navigation */
         .glass-nav {
             background: rgba(2, 6, 23, 0.7);
             backdrop-filter: blur(16px);
@@ -101,7 +96,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Floating Animation */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
@@ -177,22 +171,9 @@
                 <a href="#kontak" class="hover:text-yellow-400 transition hover:-translate-y-1 transform inline-block">Kontak</a>
             </div>
             
-            <div class="flex items-center gap-3 md:gap-4">
+            <div class="flex items-center">
                 <a href="https://api.whatsapp.com/send/?phone=6283832180622" target="_blank" class="btn-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap">Chat Me</a>
-                
-                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-1 rounded-lg hover:bg-white/10 transition">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
             </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-4 px-6 flex-col space-y-4 text-center transform transition-transform duration-300 origin-top">
-            <a href="#home" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 border-b border-white/5 block">Beranda</a>
-            <a href="#about" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 border-b border-white/5 block">Tentang</a>
-            <a href="#layanan" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 border-b border-white/5 block">Layanan</a>
-            <a href="#kontak" class="mobile-link text-white hover:text-yellow-400 font-medium tracking-widest uppercase text-xs py-3 block">Kontak</a>
         </div>
     </nav>
 
@@ -213,7 +194,7 @@
                         <span class="animate-gradient-text lg:block">Syarifudin</span>
                     </h1>
                     <p class="text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 border-l-0 lg:border-l-2 border-yellow-400/30 lg:pl-6">
-                        Mendidik dengan  <span class="text-white font-semibold">visi</span> , membangun dengan  <span class="text-white font-semibold">presisi.</span> Sebagai Pengajar sekaligus Desainer & Developer, saya menciptakan pengalaman digital yang tidak hanya terlihat indah, tetapi juga terasa bermakna.
+                        Mendidik dengan <span class="text-white font-semibold">visi</span>, membangun dengan <span class="text-white font-semibold">presisi.</span> Sebagai Pengajar sekaligus Desainer & Developer, saya menciptakan pengalaman digital yang tidak hanya terlihat indah, tetapi juga terasa bermakna.
                     </p>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                         <a href="#layanan" class="btn-primary px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-xl">Eksplorasi Karya</a>
@@ -229,9 +210,7 @@
                         
                         <div class="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20 transition-transform hover:scale-110 animate-bounce" style="animation-duration: 3s;">
                             <div class="flex items-center gap-2 sm:gap-3">
-                                <span class="text-lg sm:text-xl">🚀</span>
-                               
-                            </div>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -364,14 +343,12 @@
     </footer>
 
     <script>
-        // Inisialisasi AOS (Animate On Scroll)
         AOS.init({ 
             duration: 800, 
             once: true,
             offset: 50
         });
 
-        // Efek Navbar saat di-scroll
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -383,31 +360,10 @@
             }
         });
 
-        /* Logika Mobile Menu */
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        if (mobileBtn && mobileMenu) {
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
-        }
-
-        /* Animasi Canvas Partikel */
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
 
         let particlesArray = [];
-        // Kurangi jumlah partikel di HP agar performa tetap lancar
         const isMobile = window.innerWidth < 768;
         const numberOfParticles = isMobile ? 40 : 80; 
 
